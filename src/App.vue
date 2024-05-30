@@ -34,9 +34,49 @@ export default {
 </script>
 
 <template>
-  <div>
+  <header>HEADER</header>
 
-  </div>
+  <main>
+    <div class="container mx-auto">
+      <div class="grid grid-cols-4 gap-4">
+        <div class="col" v-for="project in projects.data">
+
+          <div class="card flex flex-col max-w-sm rounded overflow-hidden shadow-lg">
+
+            <template v-if="project.thumb.startsWith('uploads')">
+              <img :src="base_api_url + '/storage/' + project.thumb" alt="">
+            </template>
+
+            <template v-else>
+              <img :src="project.thumb" alt="">
+            </template>
+
+            <div class="card-body grow px-6 py-4">
+
+              <h3 class="font-bold text-xl mb-2">{{ project.title }}</h3>
+
+              <p class="text-gray-700 text-base">
+                {{ project.description }}
+              </p>
+
+            </div>
+
+            <div class="px-6 pt-4 pb-2">
+              <span
+                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                v-for="tag in project.technologies">
+                {{ tag.name }}
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>FOOTER</footer>
 </template>
 
 <style></style>
