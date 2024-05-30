@@ -1,0 +1,15 @@
+@use './variables' as *;
+
+/* #region :::: CARD :::: */
+.card {
+  background-color: white;
+  height: 100%;
+
+  >img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+}
+
+/* #endregion :::: CARD :::: */

@@ -37,7 +37,7 @@ export default {
 <template>
 
   <main>
-    <div class="container mx-auto">
+    <div class="container mx-auto p-5">
 
       <div class="grid grid-cols-4 gap-4" v-if="!loading">
         <div class="col" v-for="project in projects.data">
@@ -72,20 +72,17 @@ export default {
 
           </div>
 
-
-
         </div>
       </div>
 
-
-
+      <!-- Skeleton card for loading -->
       <div class="grid grid-cols-4 gap-4" v-else>
 
 
         <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm h-96 w-full mx-auto">
           <div class="animate-pulse flex space-x-4">
             <div class="flex-1 space-y-6 py-1">
-              <div class="h-2 bg-slate-700 h-40 rounded"></div>
+              <div class=" bg-slate-700 h-40 rounded"></div>
               <div class="h-2 bg-slate-700 rounded"></div>
               <div class="space-y-3">
                 <div class="grid grid-cols-3 gap-4 mb-5">
@@ -111,7 +108,7 @@ export default {
         <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm h-96 w-full mx-auto">
           <div class="animate-pulse flex space-x-4">
             <div class="flex-1 space-y-6 py-1">
-              <div class="h-2 bg-slate-700 h-40 rounded"></div>
+              <div class="bg-slate-700 h-40 rounded"></div>
               <div class="h-2 bg-slate-700 rounded"></div>
               <div class="space-y-3">
                 <div class="grid grid-cols-3 gap-4 mb-5">
@@ -137,7 +134,7 @@ export default {
         <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm h-96 w-full mx-auto">
           <div class="animate-pulse flex space-x-4">
             <div class="flex-1 space-y-6 py-1">
-              <div class="h-2 bg-slate-700 h-40 rounded"></div>
+              <div class="bg-slate-700 h-40 rounded"></div>
               <div class="h-2 bg-slate-700 rounded"></div>
               <div class="space-y-3">
                 <div class="grid grid-cols-3 gap-4 mb-5">
@@ -163,7 +160,7 @@ export default {
         <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm h-96 w-full mx-auto">
           <div class="animate-pulse flex space-x-4">
             <div class="flex-1 space-y-6 py-1">
-              <div class="h-2 bg-slate-700 h-40 rounded"></div>
+              <div class="bg-slate-700 h-40 rounded"></div>
               <div class="h-2 bg-slate-700 rounded"></div>
               <div class="space-y-3">
                 <div class="grid grid-cols-3 gap-4 mb-5">
@@ -189,7 +186,7 @@ export default {
         <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm h-96 w-full mx-auto">
           <div class="animate-pulse flex space-x-4">
             <div class="flex-1 space-y-6 py-1">
-              <div class="h-2 bg-slate-700 h-40 rounded"></div>
+              <div class="bg-slate-700 h-40 rounded"></div>
               <div class="h-2 bg-slate-700 rounded"></div>
               <div class="space-y-3">
                 <div class="grid grid-cols-3 gap-4 mb-5">
@@ -215,7 +212,7 @@ export default {
         <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm h-96 w-full mx-auto">
           <div class="animate-pulse flex space-x-4">
             <div class="flex-1 space-y-6 py-1">
-              <div class="h-2 bg-slate-700 h-40 rounded"></div>
+              <div class="bg-slate-700 h-40 rounded"></div>
               <div class="h-2 bg-slate-700 rounded"></div>
               <div class="space-y-3">
                 <div class="grid grid-cols-3 gap-4 mb-5">
@@ -241,7 +238,7 @@ export default {
         <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm h-96 w-full mx-auto">
           <div class="animate-pulse flex space-x-4">
             <div class="flex-1 space-y-6 py-1">
-              <div class="h-2 bg-slate-700 h-40 rounded"></div>
+              <div class="bg-slate-700 h-40 rounded"></div>
               <div class="h-2 bg-slate-700 rounded"></div>
               <div class="space-y-3">
                 <div class="grid grid-cols-3 gap-4 mb-5">
@@ -267,7 +264,7 @@ export default {
         <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm h-96 w-full mx-auto">
           <div class="animate-pulse flex space-x-4">
             <div class="flex-1 space-y-6 py-1">
-              <div class="h-2 bg-slate-700 h-40 rounded"></div>
+              <div class="bg-slate-700 h-40 rounded"></div>
               <div class="h-2 bg-slate-700 rounded"></div>
               <div class="space-y-3">
                 <div class="grid grid-cols-3 gap-4 mb-5">

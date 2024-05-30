@@ -1,13 +1,15 @@
 <script>
-import AppMain from './components/AppMain.vue';
 import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
+import AppFooter from './components/AppFooter.vue';
 import axios from 'axios';
 
 export default {
   name: 'App',
   components: {
     AppMain,
-    AppHeader
+    AppHeader,
+    AppFooter
   }
 }
 
@@ -19,7 +21,8 @@ export default {
 
   <AppMain />
 
-  <footer>FOOTER</footer>
+  <AppFooter />
+
 
 </template>
 
