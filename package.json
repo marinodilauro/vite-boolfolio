@@ -9,12 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@splidejs/vue-splide": "^0.6.12",
     "axios": "^1.7.2",
+    "swiper": "^11.1.4",
     "vue": "^3.4.21",
     "vue-router": "^4.3.2",
     "vue-ultimate-skeleton-cards": "^1.0.3"
   },
   "devDependencies": {
+    "@nuxtjs/vuetify": "^1.12.3",
     "@vitejs/plugin-vue": "^5.0.4",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",

@@ -42,12 +42,12 @@ export default {
   <div class="container mx-auto p-5">
 
     <div class="grid grid-cols-4 gap-4" v-if="!loading">
-      <div class="col" v-for="project in projects.data">
+      <div class="col" v-for="project in projects">
 
         <div class="card flex flex-col max-w-sm rounded overflow-hidden shadow-lg">
 
           <template v-if="project.thumb.startsWith('uploads')">
-            <img :src="base_api_url + '/storage/' + project.thumb" alt="">
+            <img :src="base_api_url + '/storage/' + project.thumb" :alt="project.title + thumbnail">
           </template>
 
           <template v-else>
