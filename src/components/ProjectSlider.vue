@@ -45,13 +45,14 @@ export default {
 <template>
 
   <div class="container">
-    <Carousel :itemsToShow="3.85" :wrapAround="true" :transition="1000">
+    <Carousel :itemsToShow="2" :wrapAround="true" :transition="1000">
 
       <Slide v-for="(project, index) in mainProjects" :key="project" :index="index">
         <div class="carousel__item">
 
-          <div class="card">
+          <div class="project_slide">
             <img class="img-fluid" :src="base_api_url + '/storage/' + project.thumb" alt="Title" />
+            <div class="title_background"></div>
             <h3>{{ project.title }}</h3>
           </div>
 
