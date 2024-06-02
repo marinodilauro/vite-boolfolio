@@ -2,6 +2,7 @@
 import axios from 'axios';
 import AppBanner from '../components/AppBanner.vue';
 import ProjectSlider from '../components/ProjectSlider.vue';
+import { RouterLink } from 'vue-router';
 
 
 
@@ -46,7 +47,15 @@ export default {
   <AppBanner title="Welcome to my portfolio" lead-text="Scroll down to see more" call-to-action="Check my projects"
     call-to-action-url="projects"></AppBanner>
 
-  <ProjectSlider />
+  <!-- Projects -->
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <h3 class="display-4">Projects</h3>
+      <RouterLink :to="{ name: 'projects' }" class="btn btn-primary" role="button">View all projects</Routerlink>
+    </div>
+    <ProjectSlider />
+  </div>
+
 
 
 </template>

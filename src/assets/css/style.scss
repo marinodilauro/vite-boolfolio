@@ -1,6 +1,8 @@
 @use './partials/variables' as *;
 @use './partials/commons';
+@use './partials/fonts';
 @use './partials/header';
 @use './partials/main';
-@use './partials/projectSlider';
 @use './partials/footer';
+@use './partials/banner';
+@use './partials/projectSlider';

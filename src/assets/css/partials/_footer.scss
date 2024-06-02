@@ -1,6 +1,16 @@
 @use './variables' as *;
 
 #footer {
+  a {
+    color: aliceblue;
+    text-decoration: underline 0.15em #ff69b400;
+    transition: text-decoration-color 300ms;
+
+    &:hover {
+      text-decoration-color: hotpink;
+    }
+  }
+
   h5 {
     font-size: 1.5rem;
   }

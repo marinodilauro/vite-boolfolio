@@ -1,1 +1,15 @@
 @use './variables' as *;
+
+#header {
+  a {
+    color: aliceblue;
+    text-decoration: underline 0.15em #ff69b400;
+    transition: text-decoration-color 300ms;
+
+    &:hover,
+    &.router-link-active {
+      text-decoration-color: hotpink;
+    }
+
+  }
+}

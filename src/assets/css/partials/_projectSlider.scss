@@ -1,6 +1,17 @@
 .carousel__slide {
   padding: 5px;
-  border-radius: 1rem;
+
+  img {
+    border-radius: 1rem;
+  }
+
+  &:hover {
+    cursor: grab;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
 }
 
 .carousel__slide--sliding {
@@ -31,9 +42,29 @@
   transform: rotateY(0) scale(1.1);
 }
 
-.carousel__prev,
+.carousel__next,
+.carousel__prev {
+  color: aliceblue;
+
+  &:hover {
+    color: hotpink
+  }
+}
+
+.carousel__prev {
+  left: -5%;
+}
+
 .carousel__next {
-  box-sizing: content-box;
+  left: 101%;
+}
+
+.carousel__pagination-button::after {
+  background-color: aliceblue;
+}
+
+.carousel__pagination-button--active::after {
+  background-color: hotpink;
 }
 
 .carousel__viewport {

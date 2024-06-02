@@ -36,8 +36,8 @@ export default {
 
 <template>
 
-  <header>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <header id="header">
+    <nav class="navbar navbar-expand-sm navbar-dark ">
       <div class="container">
 
         <a class="navbar-brand" href="#">
@@ -53,9 +53,8 @@ export default {
         <div class="collapse navbar-collapse" id="collapsibleNavId">
           <ul class="navbar-nav me-auto mt-2 mt-lg-0">
             <li class="nav-item" v-for="item in navLinks">
-              <RouterLink :to="{ name: item.route }" class="nav-link active" href="#" aria-current="page">{{ item.name
-                }}
-                <span class="visually-hidden">(current)</span>
+              <RouterLink :to="{ name: item.route }" class="nav-link" href="#" aria-current="page">
+                {{ item.name }}
               </RouterLink>
             </li>
           </ul>
