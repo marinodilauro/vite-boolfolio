@@ -1,14 +1,15 @@
 <script>
 import axios from 'axios';
 import AppBanner from '../components/AppBanner.vue';
-import AppCarousel from '../components/AppCarousel.vue';
+import ProjectSlider from '../components/ProjectSlider.vue';
+
 
 
 export default {
   name: 'AppHome',
   components: {
     AppBanner,
-    AppCarousel
+    ProjectSlider
   },
   data() {
     return {
@@ -45,7 +46,7 @@ export default {
   <AppBanner title="Welcome to my portfolio" lead-text="Scroll down to see more" call-to-action="Check my projects"
     call-to-action-url="projects"></AppBanner>
 
-  <AppCarousel />
+  <ProjectSlider />
 
 
 </template>

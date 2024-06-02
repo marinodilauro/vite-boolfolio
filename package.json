@@ -14,7 +14,8 @@
     "swiper": "^11.1.4",
     "vue": "^3.4.21",
     "vue-router": "^4.3.2",
-    "vue-ultimate-skeleton-cards": "^1.0.3"
+    "vue-ultimate-skeleton-cards": "^1.0.3",
+    "vue3-carousel": "^0.3.3"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.12.3",
