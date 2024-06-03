@@ -1,10 +1,7 @@
 <script>
-import axios from 'axios';
 import AppBanner from '../components/AppBanner.vue';
 import ProjectSlider from '../components/ProjectSlider.vue';
 import { RouterLink } from 'vue-router';
-
-
 
 export default {
   name: 'AppHome',
@@ -19,24 +16,6 @@ export default {
       mainProjects: [],
       loading: true
     }
-  },
-  methods: {
-    callApi(url) {
-      axios
-        .get(url)
-        .then(response => {
-          console.log(response);
-          this.mainProjects = response.data.projects;
-          this.loading = false;
-        })
-        .catch(err => {
-          console.error(err);
-        })
-    }
-  },
-  mounted() {
-    /*     let url = this.base_api_url + this.base_project_url;
-        this.callApi(url); */
   }
 }
 
@@ -55,8 +34,6 @@ export default {
     </div>
     <ProjectSlider />
   </div>
-
-
 
 </template>
 

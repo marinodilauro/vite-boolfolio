@@ -32,8 +32,7 @@ const router = createRouter({
     {
       path: '/projects/:slug',
       name: 'project',
-      component: SingleProject,
-      props: true
+      component: SingleProject
     }
 
   ]

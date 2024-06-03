@@ -2,13 +2,12 @@
 
 .project_slide {
   width: 600px;
-  object-fit: contain;
-  object-position: center;
   position: relative;
 
   img {
+    object-fit: conver;
+    object-position: center;
     aspect-ratio: 16/9;
-    background-color: linear-gradient(blue, pink);
   }
 
   .title_background {

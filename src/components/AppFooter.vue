@@ -9,10 +9,22 @@ export default {
         {
           name: 'SiteMap',
           link: [
-            'Home',
-            'About',
-            'Projects',
-            'Contacts'
+            {
+              name: 'Home',
+              route: 'home'
+            },
+            {
+              name: 'About',
+              route: 'about'
+            },
+            {
+              name: 'Projects',
+              route: 'projects'
+            },
+            {
+              name: 'Contacts',
+              route: 'contacts'
+            }
           ]
         },
         {
@@ -58,9 +70,9 @@ export default {
           <h5>{{ category.name }}</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2" v-for="link in category.link">
-              <router-link class="nav-link p-0">
-                {{ link }}
-              </router-link>
+              <RouterLink :to="{ name: link.route }" class="nav-link p-0">
+                {{ link.name }}
+              </RouterLink>
             </li>
           </ul>
         </div>

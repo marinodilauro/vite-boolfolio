@@ -30,7 +30,7 @@ export default {
     }
   },
   mounted() {
-    let url = this.base_api_url + this.base_project_url;
+    const url = this.base_api_url + this.base_project_url;
     this.callApi(url);
   }
 }
@@ -47,7 +47,8 @@ export default {
         <RouterLink :to="{ name: 'project', params: { slug: project.slug } }">
           <div class="project_card card border-0 d-flex">
             <div class="card-img-top">
-              <img class="img-fluid" :src="base_api_url + '/storage/' + project.thumb" alt="Title" />
+              <img class="img-fluid" :src="base_api_url + '/storage/' + project.thumb"
+                :alt="project.title + 'thumbnail'" />
             </div>
             <div class="card-body flex-fill">
               <h3 class="card-title">{{ project.title }}</h3>

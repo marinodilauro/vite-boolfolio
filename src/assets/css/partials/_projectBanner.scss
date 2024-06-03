@@ -1,0 +1,28 @@
+@use './variables' as *;
+
+#banner {
+  height: 600px;
+  position: relative;
+
+  .container-fluid {
+    .banner_foreground {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+
+      .banner_content {
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        z-index: 3;
+      }
+    }
+  }
+}

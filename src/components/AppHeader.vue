@@ -53,7 +53,7 @@ export default {
         <div class="collapse navbar-collapse" id="collapsibleNavId">
           <ul class="navbar-nav me-auto mt-2 mt-lg-0">
             <li class="nav-item" v-for="item in navLinks">
-              <RouterLink :to="{ name: item.route }" class="nav-link" href="#" aria-current="page">
+              <RouterLink :to="{ name: item.route }" class="nav-link" aria-current="page">
                 {{ item.name }}
               </RouterLink>
             </li>
