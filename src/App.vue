@@ -1,12 +1,12 @@
 <script>
-import AppHeader from './components/AppHeader.vue';
+import AppMenu from './components/AppMenu.vue';
 import AppFooter from './components/AppFooter.vue';
 import axios from 'axios';
 
 export default {
   name: 'App',
   components: {
-    AppHeader,
+    AppMenu,
     AppFooter
   }
 }
@@ -15,13 +15,22 @@ export default {
 
 <template>
 
-  <AppHeader />
+  <div class="container-fluid">
+    <div class="d-flex">
+      <div class="col-3">
+        <AppMenu />
+      </div>
+      <div class="col-9">
+        <main>
+          <RouterView />
+        </main>
+        <AppFooter />
+      </div>
+    </div>
+  </div>
 
-  <main>
-    <RouterView />
-  </main>
 
-  <AppFooter />
+
 
 </template>
 

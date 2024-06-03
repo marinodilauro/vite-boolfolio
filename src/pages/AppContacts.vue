@@ -1,18 +1,17 @@
 <script>
-import AppBanner from '../components/AppBanner.vue';
-
 export default {
-  name: 'AppContacts',
-  components: {
-    AppBanner
-  }
+  name: 'AppContacts'
 }
 </script>
 
 <template>
 
-  <AppBanner title="My contacts" lead-text="Scroll down to see more" call-to-action="Check my projects"
-    call-to-action-url="projects"></AppBanner>
+  <section id="contacts">
+    <div class="container">
+      <h3 class="display-4 text-end">contact<strong class="poppins-bold">me</strong></h3>
+      <div style="height: 500px;"></div>
+    </div>
+  </section>
 
 </template>
 

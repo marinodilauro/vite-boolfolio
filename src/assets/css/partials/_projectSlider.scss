@@ -1,3 +1,40 @@
+/* #region :::: SLIDE :::: */
+
+.project_slide {
+  width: 600px;
+  position: relative;
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 16/9;
+  }
+
+  .title_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    text-align: start;
+    border-radius: 1rem;
+  }
+
+  h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 1;
+  }
+}
+
+/* #endregion :::: SLIDE :::: */
+
+/*  #region :::: CAROUSEL :::: */
 .carousel__slide {
   padding: 5px;
 
@@ -75,3 +112,5 @@
   height: 450px;
   transform-style: preserve-3d;
 }
+
+/* #endregion :::: CAROUSEL :::: */

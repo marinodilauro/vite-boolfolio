@@ -1,18 +1,17 @@
 <script>
-import AppBanner from '../components/AppBanner.vue';
-
 export default {
-  name: 'AppAbout',
-  components: {
-    AppBanner
-  },
+  name: 'AppAbout'
 }
 </script>
 
 <template>
 
-  <AppBanner title="About me" lead-text="Scroll down to see more" call-to-action="Check my projects"
-    call-to-action-url="projects"></AppBanner>
+  <section id="aboute_me">
+    <div class="container">
+      <h3 class="display-4 text-end">about<strong class="poppins-bold">me</strong></h3>
+      <div style="height: 500px;"></div>
+    </div>
+  </section>
 
 </template>
 

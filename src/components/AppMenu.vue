@@ -1,26 +1,27 @@
 <script>
 import { RouterLink } from 'vue-router';
 import AppLogo from './AppLogo.vue';
+import gsap from 'gsap';
 
 export default {
-  name: 'AppHeader',
+  name: 'AppMenu',
   data() {
     return {
       navLinks: [
         {
-          name: 'Home',
+          name: 'HOME',
           route: 'home'
         },
         {
-          name: 'About',
+          name: 'ABOUT',
           route: 'about'
         },
         {
-          name: 'Projects',
+          name: 'PROJECTS',
           route: 'projects'
         },
         {
-          name: 'Contacts',
+          name: 'CONTACTS',
           route: 'contacts'
         }
       ]
@@ -28,6 +29,43 @@ export default {
   },
   components: {
     AppLogo
+  },
+  mounted() {
+    gsap.fromTo('#menu .nav-item:first-child',
+      { x: -500 },
+      {
+        duration: 0.5,
+
+        x: 0
+      }
+    )
+    gsap.fromTo('#menu .nav-item:nth-child(2)',
+      { x: -500 },
+      {
+        duration: 0.7,
+
+        delay: 0.05,
+        x: 0
+      }
+    )
+    gsap.fromTo('#menu .nav-item:nth-child(3)',
+      { x: -500 },
+      {
+        duration: 0.7,
+
+        delay: 0.1,
+        x: 0
+      }
+    )
+    gsap.fromTo('#menu .nav-item:nth-child(4)',
+      { x: -500 },
+      {
+        duration: 0.7,
+
+        delay: 0.15,
+        x: 0
+      }
+    )
   }
 }
 
@@ -36,7 +74,7 @@ export default {
 
 <template>
 
-  <header id="header">
+  <!--   <header id="header">
     <nav class="navbar navbar-expand-sm navbar-dark ">
       <div class="container">
 
@@ -62,7 +100,16 @@ export default {
         </div>
       </div>
     </nav>
-  </header>
+  </header> -->
+  <div id="menu">
+    <ul class="list-unstyled">
+      <li class="nav-item" v-for="item in navLinks">
+        <RouterLink :to="{ name: item.route }" class="nav-link poppins-bold" aria-current="page">
+          {{ item.name }}
+        </RouterLink>
+      </li>
+    </ul>
+  </div>
 
 </template>
 

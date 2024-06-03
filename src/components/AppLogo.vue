@@ -1,12 +1,13 @@
 <script>
+
 export default {
-  name: 'AppLogo'
+  name: 'AppLogo',
 }
 </script>
 
 <template>
 
-  <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+  <a ref="logo" @click="toggleTimeline" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
     <img width="60" src="/src/assets/img/Avatar.jpg" class="rounded-full" alt="Website logo">
   </a>
 

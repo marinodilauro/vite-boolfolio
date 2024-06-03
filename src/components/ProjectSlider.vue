@@ -1,11 +1,12 @@
 <script>
 import axios from 'axios';
-import { defineComponent } from 'vue'
 import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
+import AppLoader from '../components/AppLoader.vue';
 
 export default {
   name: 'ProjectSlider',
   components: {
+    AppLoader,
     Carousel,
     Slide,
     Pagination,
@@ -44,13 +45,14 @@ export default {
 
 <template>
 
-  <Carousel :itemsToShow="1.9" :wrapAround="true" :transition="1000" :autoplay="2000" :pauseAutoplayOnHover="true">
+  <Carousel :itemsToShow="1.9" :wrapAround="true" :transition="1000" :autoplay="2000" :pauseAutoplayOnHover="true"
+    v-if="!loading">
 
     <Slide v-for="(project, index) in mainProjects" :key="project" :index="index">
       <div class="carousel__item">
 
         <div class="project_slide">
-          <img class="img-fluid" :src="base_api_url + '/storage/' + project.thumb" alt="Title" />
+          <img class="img-fluid" :src="base_api_url + '/storage/' + project.thumb" :alt="project.title + 'thumbnail'" />
           <div class="title_background"></div>
           <h3>{{ project.title }}</h3>
         </div>
@@ -65,6 +67,9 @@ export default {
     </template>
 
   </Carousel>
+
+  <!-- Loader -->
+  <AppLoader v-else />
 
 </template>
 
