@@ -3,11 +3,19 @@
 .project_slide {
   width: 800px;
   position: relative;
+  border: 5px solid white;
+  clip-path: polygon(0% 3.4%, 100% 0, 99% 99%, 1% 96%);
+  background-color: white;
+  padding: 0.5rem;
 
   img {
+    padding: 0.6rem;
     object-fit: cover;
     object-position: center;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16 / 9;
+    border: 5px solid black;
+    background-color: black;
+    clip-path: polygon(1% 1.9%, 100% 0, 99.3% 100.1%, 0 98%);
   }
 
   .title_background {
@@ -18,7 +26,6 @@
     bottom: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
     text-align: start;
-    border-radius: 1rem;
   }
 
   h3 {
@@ -37,13 +44,11 @@
 /*  #region :::: CAROUSEL :::: */
 .carousel__slide {
   padding: 5px;
-
-  img {
-    border-radius: 1rem;
-  }
+  transition: all 0.3s;
 
   &:hover {
-    cursor: grab;
+    cursor: pointer;
+    transform: scale(1.4);
   }
 
   &:active {

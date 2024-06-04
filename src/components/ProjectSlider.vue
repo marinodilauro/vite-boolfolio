@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios';
 import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
+import { RouterLink } from 'vue-router';
 import AppLoader from '../components/AppLoader.vue';
 
 export default {
@@ -50,12 +51,14 @@ export default {
 
     <Slide v-for="(project, index) in mainProjects" :key="project" :index="index">
       <div class="carousel__item">
-
-        <div class="project_slide">
-          <img class="img-fluid" :src="base_api_url + '/storage/' + project.thumb" :alt="project.title + 'thumbnail'" />
-          <div class="title_background"></div>
-          <h3>{{ project.title }}</h3>
-        </div>
+        <RouterLink :to="{ name: 'project', params: { slug: project.slug } }">
+          <div class="project_slide">
+            <img class="img-fluid" :src="base_api_url + '/storage/' + project.thumb"
+              :alt="project.title + 'thumbnail'" />
+            <div class="title_background"></div>
+            <h3>{{ project.title }}</h3>
+          </div>
+        </RouterLink>
 
       </div>
 

@@ -3,9 +3,8 @@ export default {
   name: 'ProjectBanner',
   props: {
     'title': String,
-    'leadText': String,
-    'callToAction': String,
-    'callToActionUrl': String
+    'category': String,
+    'tags': Array
   }
 }
 </script>
@@ -17,13 +16,17 @@ export default {
       <div class="banner_foreground">
         <div class="banner_content">
 
-          <h1 class="display-5 fw-bold">{{ title }}</h1>
-          <p class="col-md-8 fs-4">
-            {{ leadText }}
-          </p>
-          <button class="btn btn-primary btn-lg" type="button" :to="{ name: callToActionUrl }">
-            {{ callToAction }}
-          </button>
+          <div class="title d-flex align-items-center gap-3">
+
+            <h1 class="display-5 fw-bold">{{ title }}</h1>
+
+            <span class="badge">{{ category }}</span>
+
+          </div>
+
+          <div class="tags d-flex gap-3">
+            <span class="badge small rounded-pill" v-for="tag in this.tags">{{ tag.name }}</span>
+          </div>
 
         </div>
       </div>

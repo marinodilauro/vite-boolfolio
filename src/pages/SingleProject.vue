@@ -50,9 +50,14 @@ export default {
 
 <template>
 
-  <ProjectBanner :title="project.title" lead-text="Scroll down to see more" call-to-action="Check my projects"
-    call-to-action-url="projects" :style="{ backgroundImage: `url(${cover_image_path})` }" v-if="!loading">
-  </ProjectBanner>
+  <div class="container-fluid p-0" v-if="!loading">
+    <ProjectBanner :title="project.title" :category="project.type.name" :tags="project.technologies"
+      :style="{ backgroundImage: `url(${cover_image_path})` }">
+    </ProjectBanner>
+    <section id="project_details">
+
+    </section>
+  </div>
 
   <!-- Loader -->
   <AppLoader v-else />

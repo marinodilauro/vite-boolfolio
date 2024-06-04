@@ -1,1 +1,15 @@
 @use './variables' as *;
+
+#banner {
+  .badge {
+    background: linear-gradient(135deg, #0023b3 0%, #00d2ff 100%);
+    margin-bottom: 3px;
+
+    &.small {
+      padding: 6px 12px;
+      line-height: 16px;
+      font-size: 1rem;
+    }
+  }
+
+}
