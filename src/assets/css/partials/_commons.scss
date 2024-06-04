@@ -10,9 +10,10 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: black;
+  background: linear-gradient(135deg, #0023b3 0%, #00d2ff 100%);
   color: aliceblue;
   scroll-behavior: smooth;
+  height: 100vh;
 }
 
 img {

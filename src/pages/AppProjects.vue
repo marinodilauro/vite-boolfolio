@@ -43,7 +43,7 @@ export default {
 
 <template>
 
-  <div class="project_list container mx-auto">
+  <div class="project_list container me-0">
     <h3 class="display-4 text-end">all<strong class="poppins-bold">projects</strong></h3>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" v-if="!loading">
 

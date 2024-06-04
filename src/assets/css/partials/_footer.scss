@@ -1,7 +1,9 @@
 @use './variables' as *;
 
 #footer {
+
   a {
+    font-family: "Libre Franklin", sans-serif;
     color: aliceblue;
     text-decoration: underline 0.15em #ff69b400;
     transition: text-decoration-color 300ms;

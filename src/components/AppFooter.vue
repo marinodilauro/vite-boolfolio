@@ -13,7 +13,7 @@ export default {
     return {
       categories: [
         {
-          name: 'SiteMap',
+          name: 'SITEMAP',
           link: [
             {
               name: 'Home',
@@ -34,7 +34,7 @@ export default {
           ]
         },
         {
-          name: 'Projects',
+          name: 'PROJECTS',
           link: [
             {
               name: 'Project 1',
@@ -55,7 +55,7 @@ export default {
           ]
         },
         {
-          name: 'Contacts',
+          name: 'CONTACTS',
           link: [
             {
               name: 'Linkedin',
@@ -84,7 +84,7 @@ export default {
     <div class="container">
       <div class="row">
 
-        <div class="col-12 col-md-4 col-lg-4 align-self-center" v-for="category in categories">
+        <div class="col-12 col-md-4 col-lg-4 align-self-start" v-for="category in categories">
           <h5>{{ category.name }}</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2" v-for="link in category.link">

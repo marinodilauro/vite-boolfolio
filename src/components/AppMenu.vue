@@ -77,7 +77,7 @@ export default {
   <div id="menu" class="d-flex flex-column h-100">
     <ul class="list-unstyled flex-fill">
       <li class="nav-item" v-for="item in navLinks">
-        <RouterLink :to="{ name: item.route }" class="nav-link poppins-bold" aria-current="page">
+        <RouterLink :to="{ name: item.route }" class="nav-link" aria-current="page">
           {{ item.name }}
         </RouterLink>
       </li>
