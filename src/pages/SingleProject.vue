@@ -51,6 +51,8 @@ export default {
 <template>
 
   <div class="container-fluid p-0" v-if="!loading">
+    <h3 class="display-4 text-end">project<strong class="poppins-bold">{{ project.title }}</strong></h3>
+
     <ProjectBanner :title="project.title" :category="project.type.name" :tags="project.technologies"
       :style="{ backgroundImage: `url(${cover_image_path})` }">
     </ProjectBanner>

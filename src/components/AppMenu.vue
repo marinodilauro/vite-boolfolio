@@ -76,13 +76,14 @@ export default {
 
   <div id="menu" class="d-flex flex-column h-100">
     <ul class="list-unstyled flex-fill">
-      <li class="nav-item" v-for="item in navLinks">
-        <RouterLink :to="{ name: item.route }" class="nav-link" aria-current="page">
+      <li class="nav-item" v-for="(item, index) in navLinks">
+        <RouterLink :to="{ name: item.route }" class="nav-link" aria-current="page"
+          :class="{ 'router-link-active': navLinks[index].route.includes(this.$route.name) }">
           {{ item.name }}
         </RouterLink>
       </li>
     </ul>
-    <div class="d-flex flex-sm-row justify-content-center align-items-center py-2 border-top gap-3">
+    <div class="d-flex flex-sm-row  align-items-center py-2 border-top gap-3">
       <img width="35" src="/src/assets/img/Avatar.jpg" class="rounded-circle" alt="Marino di Lauro logo">
       <p class="m-0">© 2024 Marino di Lauro. All rights reserved.</p>
     </div>

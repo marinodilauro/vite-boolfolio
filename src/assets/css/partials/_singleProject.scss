@@ -1,15 +1,22 @@
 @use './variables' as *;
 
 #banner {
-  .badge {
-    background: linear-gradient(135deg, #0023b3 0%, #00d2ff 100%);
+  .tag {
+    color: black;
+    transform: skew(12deg);
+    background-color: white;
+    padding: 0 12px;
     margin-bottom: 3px;
+    box-shadow: 3px -3px 0px 0px red;
 
     &.small {
-      padding: 6px 12px;
-      line-height: 16px;
+      padding: 0 6px;
       font-size: 1rem;
     }
-  }
 
+    span {
+      display: inline-block;
+      transform: skew(-12deg);
+    }
+  }
 }

@@ -1,6 +1,9 @@
 @use './variables' as *;
 
 #menu {
+  min-width: 510px;
+  padding-top: 13rem;
+  padding-left: 1.7rem;
   position: fixed;
   z-index: 9999;
 
@@ -18,9 +21,7 @@
     transform: scale(1);
     transition: all ease-in-out 300ms;
 
-    &:hover {
-      color: black;
-    }
+
 
     &.router-link-active {
       font-size: 6rem;
@@ -50,6 +51,10 @@
     a {
       color: #00baff;
       transform: rotateZ(-8deg) skew(-3deg);
+
+      &:hover {
+        color: black;
+      }
 
       &.router-link-active {
         color: black;
@@ -83,6 +88,10 @@
       color: #5fdcff;
       margin-left: 2rem;
       transform: rotateZ(-1deg) skew(-11deg);
+
+      &:hover {
+        color: black;
+      }
 
       &.router-link-active {
         color: black;
@@ -123,6 +132,10 @@
       color: #00baff;
       transform: rotateZ(-7deg) skew(-10deg);
 
+      &:hover {
+        color: black;
+      }
+
       &.router-link-active {
         color: black;
         transform: translate(0, -10px) rotateZ(-5deg) skew(-10deg);
@@ -160,6 +173,10 @@
     a {
       color: #337fff;
       transform: rotateZ(-2deg) skew(-10deg);
+
+      &:hover {
+        color: black;
+      }
 
       &.router-link-active {
         color: black;

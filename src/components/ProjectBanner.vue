@@ -20,12 +20,16 @@ export default {
 
             <h1 class="display-5 fw-bold">{{ title }}</h1>
 
-            <span class="badge">{{ category }}</span>
+            <div class="tag">
+              <span> {{ category }}</span>
+            </div>
 
           </div>
 
-          <div class="tags d-flex gap-3">
-            <span class="badge small rounded-pill" v-for="tag in this.tags">{{ tag.name }}</span>
+          <div class="d-flex gap-3">
+            <div class="tag small" v-for="tag in this.tags">
+              <span>{{ tag.name }}</span>
+            </div>
           </div>
 
         </div>

@@ -9,11 +9,11 @@
   padding: 0.5rem;
 
   img {
-    padding: 0.6rem;
+    padding: 0.4rem;
     object-fit: cover;
     object-position: center;
     aspect-ratio: 16 / 9;
-    border: 5px solid black;
+    border: 0.6rem solid rgb(255, 24, 0);
     background-color: black;
     clip-path: polygon(1% 1.9%, 100% 0, 99.3% 100.1%, 0 98%);
   }
