@@ -16,11 +16,11 @@ export default {
 <template>
 
   <div class="container-fluid">
-    <div class="d-flex">
+    <div class="row">
       <div class="col-3">
         <AppMenu />
       </div>
-      <div class="col-9">
+      <div class="col-9 px-0">
         <main>
           <RouterView />
         </main>

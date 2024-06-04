@@ -1,11 +1,13 @@
 <script>
 import axios from 'axios';
 import ProjectBanner from '../components/ProjectBanner.vue';
+import AppLoader from '../components/AppLoader.vue';
 
 export default {
   name: 'SingleProject',
   components: {
-    ProjectBanner
+    ProjectBanner,
+    AppLoader
   },
   data() {
     return {
@@ -23,12 +25,15 @@ export default {
         .get(url)
         .then(response => {
           if (response.data.success) {
+
             // get project data
             this.project = response.data.result;
             this.cover_image_path = this.cover_image_base_path + response.data.result.thumb;
             this.loading = false;
           } else {
+
             // handle 404 error  page
+            this.$router.push({ name: 'not-found' });
           }
         })
         .catch(err => {
@@ -46,8 +51,11 @@ export default {
 <template>
 
   <ProjectBanner :title="project.title" lead-text="Scroll down to see more" call-to-action="Check my projects"
-    call-to-action-url="projects" :style="{ backgroundImage: `url(${cover_image_path})` }">
+    call-to-action-url="projects" :style="{ backgroundImage: `url(${cover_image_path})` }" v-if="!loading">
   </ProjectBanner>
+
+  <!-- Loader -->
+  <AppLoader v-else />
 
 </template>
 

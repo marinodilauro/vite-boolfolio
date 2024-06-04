@@ -45,7 +45,7 @@ export default {
 
 <template>
 
-  <Carousel :itemsToShow="1.9" :wrapAround="true" :transition="1000" :autoplay="2000" :pauseAutoplayOnHover="true"
+  <Carousel :itemsToShow="1.45" :wrapAround="true" :transition="1600" :autoplay="2000" :pauseAutoplayOnHover="true"
     v-if="!loading">
 
     <Slide v-for="(project, index) in mainProjects" :key="project" :index="index">
@@ -62,7 +62,6 @@ export default {
     </Slide>
 
     <template #addons>
-      <Navigation />
       <Pagination />
     </template>
 

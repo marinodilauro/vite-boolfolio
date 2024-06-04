@@ -1,8 +1,8 @@
 @use './variables' as *;
 
 #menu {
-  width: 300px;
   position: fixed;
+  z-index: 9999;
 
   a {
     font-size: 5rem;

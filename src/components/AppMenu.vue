@@ -74,42 +74,20 @@ export default {
 
 <template>
 
-  <!--   <header id="header">
-    <nav class="navbar navbar-expand-sm navbar-dark ">
-      <div class="container">
-
-        <a class="navbar-brand" href="#">
-          <img width="60" src="/src/assets/img/Avatar.jpg" class="rounded-circle" alt="Marino di Lauro logo">
-        </a>
-
-        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-          data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-            <li class="nav-item" v-for="item in navLinks">
-              <RouterLink :to="{ name: item.route }" class="nav-link" aria-current="page">
-                {{ item.name }}
-              </RouterLink>
-            </li>
-          </ul>
-
-        </div>
-      </div>
-    </nav>
-  </header> -->
-  <div id="menu">
-    <ul class="list-unstyled">
+  <div id="menu" class="d-flex flex-column h-100">
+    <ul class="list-unstyled flex-fill">
       <li class="nav-item" v-for="item in navLinks">
         <RouterLink :to="{ name: item.route }" class="nav-link poppins-bold" aria-current="page">
           {{ item.name }}
         </RouterLink>
       </li>
     </ul>
+    <div class="d-flex flex-sm-row justify-content-center align-items-center py-2 border-top gap-3">
+      <img width="35" src="/src/assets/img/Avatar.jpg" class="rounded-circle" alt="Marino di Lauro logo">
+      <p class="m-0">© 2024 Marino di Lauro. All rights reserved.</p>
+    </div>
   </div>
+
 
 </template>
 
