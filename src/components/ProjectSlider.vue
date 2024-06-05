@@ -46,8 +46,7 @@ export default {
 
 <template>
 
-  <Carousel :itemsToShow="1.45" :wrapAround="true" :transition="1600" :autoplay="1500" :pauseAutoplayOnHover="true"
-    v-if="!loading">
+  <Carousel :itemsToShow="1.45" :wrapAround="true" :transition="1600" :autoplay="1500" :pauseAutoplayOnHover="true">
 
     <Slide v-for="(project, index) in mainProjects" :key="project" :index="index">
       <div class="carousel__item">
@@ -71,7 +70,7 @@ export default {
   </Carousel>
 
   <!-- Loader -->
-  <AppLoader v-else />
+  <!-- <AppLoader v-else /> -->
 
 </template>
 

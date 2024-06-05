@@ -18,11 +18,34 @@ export default {
       <h3 class="display-4 text-end me-5">highlithed<strong class="poppins-bold">projects</strong></h3>
 
       <!-- Main projects slider-->
-      <ProjectSlider />
+      <transition appear mode="out-in" name="fade">
+        <ProjectSlider />
+      </transition>
+
     </div>
 
   </section>
 
 </template>
 
-<style></style>
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

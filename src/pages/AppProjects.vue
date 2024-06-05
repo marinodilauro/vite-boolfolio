@@ -45,7 +45,7 @@ export default {
 
   <div class="project_list container me-0">
     <h3 class="display-4 text-end">all<strong class="poppins-bold">projects</strong></h3>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" v-if="!loading">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
       <div class="col" v-for="project in projects.data">
 
@@ -94,7 +94,7 @@ export default {
     </div>
 
     <!-- Loader -->
-    <AppLoader v-else />
+    <!-- <AppLoader v-else /> -->
 
   </div>
 
