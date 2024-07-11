@@ -15,11 +15,15 @@ export default {
 <template>
 
   <div class="container-fluid">
+
     <div class="row">
+
       <div class="col-3">
         <AppMenu />
       </div>
+
       <div class="col-9 px-0">
+
         <main>
           <router-view v-slot="{ Component }">
             <transition mode="out-in" name="fade">
@@ -27,8 +31,11 @@ export default {
             </transition>
           </router-view>
         </main>
+
         <AppFooter />
+
       </div>
+
     </div>
   </div>
 

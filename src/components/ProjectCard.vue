@@ -31,7 +31,11 @@ export default {
     <div class="overlay"></div>
     <div class="details">
 
-      <div class="cardHeader">{{ project.title }}</div>
+      <div class="cardHeader">
+        <RouterLink :to="{ name: 'project', params: { slug: project.slug } }">
+          {{ project.title }}
+        </RouterLink>
+      </div>
 
       <div class="cardText">
         <p>{{ project.description }}</p>
@@ -43,17 +47,21 @@ export default {
         </span>
       </div>
 
-      <div>
-        <button type="button" class="button">
-          <a :href="project.project_link" target="_blank">
-            View project
-          </a>
+      <div class="d-flex gap-3">
+        <button type="button" class="button" :disabled="!project.project_link">
+          <span class="button_top">
+            <a :href="project.project_link" target="_blank">
+              View project
+            </a>
+          </span>
         </button>
 
-        <button type="button" class="button">
-          <a :href="project.repo_link" target="_blank">
-            Check repository
-          </a>
+        <button type="button" class="button" :disabled="!project.repo_link">
+          <span class="button_top">
+            <a :href="project.repo_link" target="_blank">
+              Check repository
+            </a>
+          </span>
         </button>
       </div>
 
@@ -67,9 +75,9 @@ export default {
 .project_card {
   height: 400px;
   width: 100%;
+  padding: 1.7rem 1rem;
   position: relative;
   border-radius: 16px;
-  padding: 1.3rem 1rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -81,7 +89,7 @@ export default {
   .overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 16px;
     transition: opacity 0.3s ease;
@@ -100,12 +108,23 @@ export default {
     transition: all 0.5s ease;
     z-index: 2;
 
+    a {
+      text-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.7);
+      text-decoration: none;
+      color: aliceblue;
+
+      &:hover {
+        text-shadow: 1.5px 1.5px 1px rgba(255, 255, 255, 0.5);
+        color: #0d6efd;
+      }
+    }
+
     &::after {
       content: "";
       width: calc(100% + 1rem);
       height: 2.5px;
       transform: translateX(calc(-100% - 1rem));
-      background: #00d2ff;
+      background: linear-gradient(135deg, #0023b3 0%, #00d2ff 100%);
       bottom: -2px;
       left: 0;
       position: absolute;
@@ -138,11 +157,39 @@ export default {
     }
 
     .button {
-      background-color: #00d2ff;
-      color: black;
-      padding: 2.5px 5px;
-      width: max-content;
-      border-radius: 2.5px;
+      --button_radius: 0.75rem;
+      --button_color: aliceblue;
+      --button_outline_color: linear-gradient(135deg, #0023b3 0%, #00d2ff 100%);
+      font-weight: bold;
+      border: none;
+      border-radius: var(--button_radius);
+      background: var(--button_outline_color);
+
+      .button_top {
+        display: block;
+        box-sizing: border-box;
+        border: 2px solid var(--button_outline_color);
+        border-radius: var(--button_radius);
+        padding: 0.5rem 1rem;
+        background: var(--button_color);
+        transform: translateY(-0.2rem);
+        transition: transform 0.1s ease;
+
+        a {
+          color: linear-gradient(135deg, #0023b3 0%, #00d2ff 100%);
+          text-decoration: none;
+        }
+      }
+
+      &:hover .button_top {
+        /* Pull the button upwards when hovered */
+        transform: translateY(-0.33em);
+      }
+
+      &:active .button_top {
+        /* Push the button downwards when pressed */
+        transform: translateY(0);
+      }
     }
   }
 

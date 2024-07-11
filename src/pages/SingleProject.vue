@@ -41,6 +41,15 @@ export default {
         })
     }
   },
+  computed: {
+    backgroundImageStyle() {
+      return {
+        backgroundImage: `url(${this.base_api_url + '/storage/' + this.project.thumb})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      };
+    }
+  },
   mounted() {
     const url = this.base_api_url + this.base_project_url + this.$route.params.slug;
     this.callApi(url);
@@ -54,7 +63,7 @@ export default {
     <h3 class="display-4 text-end">project<strong class="poppins-bold">{{ project.title }}</strong></h3>
 
     <ProjectBanner :title="project.title" :category="project.type.name" :tags="project.technologies"
-      :style="{ backgroundImage: `url(${cover_image_path})` }">
+      :style="backgroundImageStyle">
     </ProjectBanner>
     <section id="project_details">
 

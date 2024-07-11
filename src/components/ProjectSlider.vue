@@ -22,56 +22,50 @@ export default {
     };
   },
   methods: {
-    callApi(url) {
-      axios
-        .get(url)
-        .then(response => {
-          console.log(response);
-          this.mainProjects = response.data.projects;
-          this.loading = false;
-          console.log(this.mainProjects);
-        })
-        .catch(err => {
-          console.error(err);
-        })
+    async fetchProjects() {
+      try {
+        const url = this.base_api_url + this.base_project_url;
+        const response = await axios.get(url);
+        this.mainProjects = response.data.projects;
+        this.loading = false;
+      } catch (error) {
+        console.error('Errore nel caricamento dei progetti:', error);
+        this.loading = false;
+      }
     }
   },
   mounted() {
-    let url = this.base_api_url + this.base_project_url;
-    this.callApi(url);
+    this.fetchProjects();
   }
 }
-
 </script>
 
 <template>
+  <div v-if="!loading">
+    <Carousel :items-to-show="1.6" :wrap-around="true" :transition="1600" :autoplay="1500"
+      :pause-autoplay-on-hover="true">
+      <Slide v-for="project in mainProjects" :key="project.id">
+        <div class="carousel__item">
+          <RouterLink :to="{ name: 'project', params: { slug: project.slug } }">
+            <div class="project_slide">
+              <img class="img-fluid" :src="base_api_url + '/storage/' + project.thumb"
+                :alt="project.title + ' thumbnail'" />
+              <div class="title_background"></div>
+              <h3>{{ project.title }}</h3>
+            </div>
+          </RouterLink>
+        </div>
+      </Slide>
 
-  <Carousel :itemsToShow="1.45" :wrapAround="true" :transition="1600" :autoplay="1500" :pauseAutoplayOnHover="true">
+      <template #addons>
+        <Navigation />
+        <Pagination />
+      </template>
+    </Carousel>
+  </div>
 
-    <Slide v-for="(project, index) in mainProjects" :key="project" :index="index">
-      <div class="carousel__item">
-        <RouterLink :to="{ name: 'project', params: { slug: project.slug } }">
-          <div class="project_slide">
-            <img class="img-fluid" :src="base_api_url + '/storage/' + project.thumb"
-              :alt="project.title + 'thumbnail'" />
-            <div class="title_background"></div>
-            <h3>{{ project.title }}</h3>
-          </div>
-        </RouterLink>
 
-      </div>
-
-    </Slide>
-
-    <template #addons>
-      <Pagination />
-    </template>
-
-  </Carousel>
-
-  <!-- Loader -->
-  <!-- <AppLoader v-else /> -->
+  <AppLoader v-else />
 
 </template>
-
 <style></style>
