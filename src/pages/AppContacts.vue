@@ -61,9 +61,9 @@ export default {
 <template>
 
   <section id="contacts">
-    <div class="container">
+    <div class="container wrapper">
       <h3 class="display-4 text-end">contact<strong class="poppins-bold">me</strong></h3>
-      <section class="py-8">
+      <section class="p-5">
         <div class="container">
 
           <template v-if="success">
@@ -93,21 +93,21 @@ export default {
               <label for="name" class="form-label">Name</label>
               <input type="text" class="form-control" :class="{ 'is-invalid': errors.name }" name="name" id="name"
                 aria-describedby="helpId" placeholder="" v-model="name" />
-              <small id="nameHelper" class="form-text text-muted">Help text</small>
+              <small id="nameHelper" class="form-text text-muted">Your full name</small>
             </div>
 
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
               <input type="email" class="form-control" :class="{ 'is-invalid': errors.email }" name="email" id="email"
                 aria-describedby="helpId" placeholder="" v-model="email" />
-              <small id="emailHelper" class="form-text text-muted">Help text</small>
+              <small id="emailHelper" class="form-text text-muted">Your email address</small>
             </div>
 
             <div class="mb-3">
               <label for="message" class="form-label">Message</label>
               <textarea class="form-control" :class="{ 'is-invalid': errors.message }" name="message" id="message"
                 rows="3" v-model="message"></textarea>
-              <small id="messageHelper" class="form-text text-muted">Help text</small>
+              <small id="messageHelper" class="form-text text-muted">Your message</small>
             </div>
 
             <button type="submit" class="btn btn-primary" :disabled="loading">

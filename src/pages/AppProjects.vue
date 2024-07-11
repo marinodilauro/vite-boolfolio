@@ -1,12 +1,14 @@
 <script>
 import { RouterLink } from 'vue-router';
 import AppLoader from '../components/AppLoader.vue';
+import ProjectCard from '../components/ProjectCard.vue';
 import axios from 'axios';
 
 export default {
   name: 'AppProjects',
   components: {
-    AppLoader
+    AppLoader,
+    ProjectCard
   },
   data() {
     return {
@@ -43,54 +45,16 @@ export default {
 
 <template>
 
-  <div class="project_list container me-0">
-    <h3 class="display-4 text-end">all<strong class="poppins-bold">projects</strong></h3>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  <div class="project_list container wrapper me-0">
+    <h3 class="display-4 text-end me-5">all<strong class="poppins-bold">projects</strong></h3>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 p-5">
 
       <div class="col" v-for="project in projects.data">
 
-        <div class="project_card card border-0 d-flex">
-
-          <RouterLink :to="{ name: 'project', params: { slug: project.slug } }">
-
-            <div class="card-img-top">
-              <img :src="base_api_url + '/storage/' + project.thumb" :alt="project.title + 'thumbnail'" />
-            </div>
-
-            <div class="card-title">
-              <h3 class="card-title">{{ project.title }}</h3>
-            </div>
-
-          </RouterLink>
-
-          <div class="card-body flex-fill">
-            <p>{{ project.description }}</p>
-
-            <div>
-              <button type="button">
-                <a :href="project.project_link" target="_blank">
-                  View project
-                </a>
-              </button>
-
-              <button type="button">
-                <a :href="project.repo_link" target="_blank">
-                  Check repository
-                </a>
-              </button>
-
-            </div>
-          </div>
-
-          <div class="card-footer d-flex">
-            <span class="tag" v-for="tag in project.technologies">
-              {{ tag.name }}
-            </span>
-          </div>
-
-        </div>
+        <ProjectCard :project="project" :base_api_url="this.base_api_url" />
 
       </div>
+
     </div>
 
     <!-- Loader -->
