@@ -1,7 +1,16 @@
 @use './variables' as *;
 
+main {
+  height: calc(100vh - 190px);
+  overflow-y: auto;
+}
+
 .project_list {
   position: relative;
   height: calc(100vh - 190px);
   overflow-y: auto;
+}
+
+.highlighted_projects {
+  height: calc(100vh - 190px);
 }

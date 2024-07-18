@@ -37,19 +37,19 @@ export default {
           name: 'PROJECTS',
           link: [
             {
-              name: 'Project 1',
-              route: 'home'
+              name: 'Nebula - Arcade Shooter',
+              route: ''
             },
             {
-              name: 'Project 2',
+              name: 'Game Hoax Website',
               route: 'about'
             },
             {
-              name: 'Project 3',
+              name: 'Clothing e-commerce',
               route: 'projects'
             },
             {
-              name: 'Project 4',
+              name: 'DC Comics CMS',
               route: 'contacts'
             }
           ]

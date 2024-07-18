@@ -41,31 +41,28 @@ export default {
 </script>
 
 <template>
-  <div v-if="!loading">
-    <Carousel :items-to-show="1.6" :wrap-around="true" :transition="1600" :autoplay="1500"
-      :pause-autoplay-on-hover="true">
-      <Slide v-for="project in mainProjects" :key="project.id">
-        <div class="carousel__item">
-          <RouterLink :to="{ name: 'project', params: { slug: project.slug } }">
-            <div class="project_slide">
-              <img class="img-fluid" :src="base_api_url + '/storage/' + project.thumb"
-                :alt="project.title + ' thumbnail'" />
-              <div class="title_background"></div>
-              <h3>{{ project.title }}</h3>
-            </div>
-          </RouterLink>
-        </div>
-      </Slide>
 
-      <template #addons>
-        <Navigation />
-        <Pagination />
-      </template>
-    </Carousel>
-  </div>
+  <Carousel :items-to-show="1.6" :wrap-around="true" :transition="1600" :autoplay="1500"
+    :pause-autoplay-on-hover="true">
+    <Slide v-for="project in mainProjects" :key="project.id">
+      <div class="carousel__item">
+        <RouterLink :to="{ name: 'project', params: { slug: project.slug } }">
+          <div class="project_slide">
+            <img class="img-fluid" :src="base_api_url + '/storage/' + project.thumb"
+              :alt="project.title + ' thumbnail'" />
+            <div class="title_background"></div>
+            <h3>{{ project.title }}</h3>
+          </div>
+        </RouterLink>
+      </div>
+    </Slide>
 
-
-  <AppLoader v-else />
+    <template #addons>
+      <Navigation />
+      <Pagination />
+    </template>
+  </Carousel>
 
 </template>
-<style></style>
+
+<style scoped></style>

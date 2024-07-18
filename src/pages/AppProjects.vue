@@ -44,23 +44,27 @@ export default {
 </script>
 
 <template>
+  <div v-if="!loading">
 
-  <div class="project_list container wrapper me-0">
-    <h3 class="display-4 text-end me-5">all<strong class="poppins-bold">projects</strong></h3>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 p-5">
 
-      <div class="col" v-for="project in projects.data">
+    <div class="project_list container wrapper me-0">
+      <h3 class="display-4 text-end me-5">all<strong class="poppins-bold">projects</strong></h3>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 p-5">
 
-        <ProjectCard :project="project" :base_api_url="this.base_api_url" />
+        <div class="col" v-for="project in projects.data">
+
+          <ProjectCard :project="project" :base_api_url="this.base_api_url" />
+
+        </div>
 
       </div>
 
+
     </div>
-
-    <!-- Loader -->
-    <!-- <AppLoader v-else /> -->
-
   </div>
+
+  <!-- Loader -->
+  <AppLoader v-else />
 
 </template>
 

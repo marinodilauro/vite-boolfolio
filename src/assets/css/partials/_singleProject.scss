@@ -1,22 +1,33 @@
 @use './variables' as *;
 
-#banner {
-  .tag {
-    color: black;
-    transform: skew(12deg);
-    background-color: white;
-    padding: 0 12px;
-    margin-bottom: 3px;
-    box-shadow: 3px -3px 0px 0px red;
 
-    &.small {
-      padding: 0 6px;
-      font-size: 1rem;
-    }
+h3 {
+  position: sticky;
+  margin-right: 5rem;
+}
 
-    span {
-      display: inline-block;
-      transform: skew(-12deg);
+.single_project {
+  /*   height: calc(100vh - 189px);
+  overflow-y: auto; */
+
+  #banner {
+    .tag {
+      color: black;
+      transform: skew(12deg);
+      background-color: white;
+      padding: 0 12px;
+      margin-bottom: 3px;
+      box-shadow: 3px -3px 0px 0px red;
+
+      &.small {
+        padding: 0 6px;
+        font-size: 1rem;
+      }
+
+      span {
+        display: inline-block;
+        transform: skew(-12deg);
+      }
     }
   }
 }

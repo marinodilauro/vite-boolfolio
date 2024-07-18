@@ -18,7 +18,7 @@ export default {
 
           <div class="title d-flex align-items-center gap-3">
 
-            <h1 class="display-5 fw-bold">{{ title }}</h1>
+            <h1 class="display-5 fw-bold me-5">{{ title }}</h1>
 
             <div class="tag">
               <span> {{ category }}</span>

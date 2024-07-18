@@ -24,7 +24,7 @@ export default {
 
       <div class="col-9 px-0">
 
-        <main>
+        <main class="overflow-auto">
           <router-view v-slot="{ Component }">
             <transition mode="out-in" name="fade">
               <component :is="Component" />
@@ -44,10 +44,10 @@ export default {
 
 </template>
 
-<style>
+<style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1s ease;
+  transition: opacity 0.5s ease;
 }
 
 .fade-enter-from,
@@ -57,7 +57,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1s ease;
+  transition: opacity 0.5s ease;
 }
 
 .fade-enter-from,

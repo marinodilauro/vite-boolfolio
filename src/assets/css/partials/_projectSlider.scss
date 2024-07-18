@@ -3,7 +3,7 @@
 .carousel {
   padding: 6rem 0;
   position: relative;
-  height: calc(100vh - 263px);
+  height: calc(100vh - 265px);
   overflow: hidden;
   margin: auto;
 }
@@ -133,6 +133,10 @@
 
 .carousel__next {
   right: 10%;
+}
+
+.carousel__pagination {
+  margin-top: 2rem;
 }
 
 /* #endregion :::: NAVIGATION :::: */
