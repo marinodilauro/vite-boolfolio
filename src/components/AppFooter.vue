@@ -1,77 +1,23 @@
 <script>
 import AppLogo from './AppLogo.vue';
+import { ref } from 'vue';
+import { TwitterIcon, LinkedinIcon, GithubIcon } from 'lucide-vue-next';
+
 
 export default {
   name: 'AppFooter',
   components: {
-    AppLogo
+    AppLogo,
+    TwitterIcon,
+    LinkedinIcon,
+    GithubIcon
   },
   props: {
     projects: Array
   },
   data() {
     return {
-      categories: [
-        {
-          name: 'SITEMAP',
-          link: [
-            {
-              name: 'Home',
-              route: 'home'
-            },
-            {
-              name: 'About',
-              route: 'about'
-            },
-            {
-              name: 'Projects',
-              route: 'projects'
-            },
-            {
-              name: 'Contacts',
-              route: 'contacts'
-            }
-          ]
-        },
-        {
-          name: 'PROJECTS',
-          link: [
-            {
-              name: 'Nebula - Arcade Shooter',
-              route: ''
-            },
-            {
-              name: 'Game Hoax Website',
-              route: 'about'
-            },
-            {
-              name: 'Clothing e-commerce',
-              route: 'projects'
-            },
-            {
-              name: 'DC Comics CMS',
-              route: 'contacts'
-            }
-          ]
-        },
-        {
-          name: 'CONTACTS',
-          link: [
-            {
-              name: 'Linkedin',
-              route: 'home'
-            },
-            {
-              name: 'GitHub',
-              route: 'about'
-            },
-            {
-              name: 'CV',
-              route: 'projects'
-            }
-          ]
-        }
-      ]
+      currentYear: new Date().getFullYear()
     }
   }
 }
@@ -79,23 +25,18 @@ export default {
 
 <template>
 
-
-  <footer id="footer" class="pt-4">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-12 col-md-4 col-lg-4 align-self-start" v-for="category in categories">
-          <h5>{{ category.name }}</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2" v-for="link in category.link">
-              <RouterLink :to="{ name: link.route }" class="nav-link p-0">
-                {{ link.name }}
-              </RouterLink>
-            </li>
-          </ul>
-        </div>
-
-      </div>
+  <footer class="p-3 d-flex justify-content-between align-items-center border-top border-secondary">
+    <div>Copyright {{ currentYear }} all rights reserved</div>
+    <div class="d-flex gap-3">
+      <a href="#" class="text-secondary">
+        <TwitterIcon />
+      </a>
+      <a href="#" class="text-secondary">
+        <LinkedinIcon />
+      </a>
+      <a href="#" class="text-secondary">
+        <GithubIcon />
+      </a>
     </div>
   </footer>
 

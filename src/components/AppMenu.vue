@@ -9,19 +9,19 @@ export default {
     return {
       navLinks: [
         {
-          name: 'HOME',
+          name: 'Home',
           route: 'home'
         },
         {
-          name: 'ABOUT',
+          name: 'About',
           route: 'about'
         },
         {
-          name: 'PROJECTS',
+          name: 'Projects',
           route: 'projects'
         },
         {
-          name: 'CONTACTS',
+          name: 'Keep in touch',
           route: 'contacts'
         }
       ]
@@ -74,7 +74,21 @@ export default {
 
 <template>
 
-  <div id="menu" class="d-flex flex-column h-100">
+  <nav id="menu" class="bg_grey border-end border-secondary p-5 h-100 d-flex flex-column justify-content-center">
+
+    <div class="fs-4 fw-bold mb-3">MM</div>
+    <ul class="nav d-flex flex-column gap-3">
+      <li class="nav-item" v-for="(item, index) in navLinks" :key="index">
+        <RouterLink :to="{ name: item.route }" aria-current="page"
+          :class="{ 'router-link-active': navLinks[index].route.includes(this.$route.name) }">
+          {{ item.name }}
+        </RouterLink>
+      </li>
+    </ul>
+
+  </nav>
+
+  <!-- <div id="menu" class="d-flex flex-column h-100">
     <ul class="list-unstyled flex-fill">
       <li class="nav-item" v-for="(item, index) in navLinks" :key="index">
         <RouterLink :to="{ name: item.route }" class="nav-link" aria-current="page"
@@ -89,7 +103,7 @@ export default {
       <img width="35" src="/src/assets/img/Avatar.jpg" class="rounded-circle" alt="Marino di Lauro logo">
       <p class="m-0">© 2024 Marino di Lauro. All rights reserved.</p>
     </div>
-  </div>
+  </div> -->
 
 
 </template>

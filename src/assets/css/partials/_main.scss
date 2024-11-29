@@ -1,13 +1,13 @@
 @use './variables' as *;
 
 main {
-  height: calc(100vh - 190px);
+  height: calc(100vh - 55px);
   overflow-y: auto;
 }
 
 .project_list {
   position: relative;
-  height: calc(100vh - 190px);
+  height: calc(100vh - 55px);
   overflow-y: auto;
 }
 

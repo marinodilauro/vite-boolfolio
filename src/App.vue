@@ -14,30 +14,30 @@ export default {
 
 <template>
 
-  <div class="container-fluid">
 
-    <div class="row">
 
-      <div class="col-3">
-        <AppMenu />
-      </div>
+  <div class="row">
 
-      <div class="col-9 px-0">
+    <div class="col-2 p-0">
+      <AppMenu />
+    </div>
 
-        <main class="overflow-auto">
-          <router-view v-slot="{ Component }">
-            <transition mode="out-in" name="fade">
-              <component :is="Component" />
-            </transition>
-          </router-view>
-        </main>
+    <div class="col-10 px-0">
 
-        <AppFooter />
+      <main class="overflow-auto">
+        <router-view v-slot="{ Component }">
+          <transition mode="out-in" name="fade">
+            <component :is="Component" />
+          </transition>
+        </router-view>
+      </main>
 
-      </div>
 
     </div>
+
+
   </div>
+  <AppFooter />
 
 
 

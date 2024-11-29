@@ -32,7 +32,7 @@ export default {
 
       gsap.to(container, {
         x: `-${containerWidth}px`,
-        duration: 50,
+        duration: 60,
         repeat: -1,
         ease: "none",
         yoyo: true,

@@ -1,142 +1,126 @@
-/* #region :::: CAROUSEL :::: */
-
-.carousel {
-  padding: 6rem 0;
-  position: relative;
-  height: calc(100vh - 265px);
+.carousel-viewport {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  margin: auto;
 }
 
-.carousel__slide {
-  transition: all 0.5s ease;
-  opacity: 0.7;
+.carousel-inner-multiple .carousel-item {
+  display: block;
+  opacity: 0.5;
   transform: scale(0.8);
+  transition: 0.5s ease-in-out;
 }
 
-.carousel__slide--active {
+.carousel-inner-multiple .carousel-item.active {
   opacity: 1;
-  transform: scale(1.1); // Aumenta la dimensione della slide attiva
-  z-index: 2; // Assicura che la slide attiva sia sopra le altre
 }
 
-.carousel__slide--prev,
-.carousel__slide--next {
-  opacity: 0.9;
-  transform: scale(0.9);
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-content {
+  width: 700px;
+  height: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  border: 2px solid white;
+  border-radius: 40px;
+}
+
+.carousel-indicators {
+  bottom: -20px;
+
+  .indicator {
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 100% !important;
+    border: 1px solid white !important;
+    background-color: transparent !important;
+
+    &.active {
+      background-color: white !important;
+    }
+
+  }
+}
+
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  margin: 0 5px;
+
+  &:active {
+    background-color: #fff;
+  }
+}
+
+.carousel-control-prev {
+  left: 29.5%;
+  top: 98%;
+}
+
+.carousel-control-next {
+  left: 55.5%;
+  top: 98%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 24px;
+  height: 24px;
+}
+
+
+
+/* Custom styles for showing multiple items */
+.carousel-inner {
+  overflow: visible;
+  perspective: 1000px;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.carousel-item.active {
+  position: relative;
+}
+
+/* Show previous and next items */
+.carousel-item.active+.carousel-item {
+  position: absolute;
+  top: 0;
+  right: -60%;
+  z-index: -1;
+  display: block;
+  visibility: visible;
+}
+
+.carousel-item.active:not(:first-child) {
+  position: relative;
+  left: 0;
+  right: 0;
   z-index: 1;
 }
 
-.carousel__viewport {
-  perspective: 1000px;
-  overflow: visible; // Permette alla slide centrale di estendersi oltre i confini del viewport
+.carousel-item:not(.active):not(.active + .carousel-item) {
+  display: none;
 }
 
-.carousel__track {
-  transform-style: preserve-3d;
-  height: 480px;
-  padding: 10% 0; // Aggiunge spazio sopra e sotto per la slide ingrandita
-}
-
-/* #endregion :::: CAROUSEL :::: */
-
-
-/* #region :::: SLIDE :::: */
-.project_slide {
-  width: 100%;
-  max-width: 800px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  border-radius: 16px;
-  padding: 0;
-  transition: transform 0.3s ease;
-  overflow: hidden;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  img {
-    width: 100%;
-    padding: 0;
-    max-height: 100%;
-    width: auto;
-    object-fit: cover;
-    object-position: center;
-    aspect-ratio: 16 / 9;
-    transition: filter 0.3s ease, transform 0.3s ease;
-  }
-
-  &:hover img {
-    filter: brightness(1.1);
-    transform: scale(1.1);
-  }
-
-  .title_background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 70%);
-    text-align: start;
-  }
-
-  h3 {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    z-index: 1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-  }
-
-  &:hover h3 {
-    transform: translateY(-5px);
-  }
-}
-
-/* #endregion :::: SLIDE :::: */
-
-
-/* #region :::: NAVIGATION :::: */
-
-.carousel__prev,
-.carousel__next {
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
+.carousel-item.active~.carousel-item:last-child,
+.carousel-item.active:first-child~.carousel-item:last-child {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    transform: translateY(-50%) scale(1.1);
-  }
+  top: 0;
+  left: -60%;
+  z-index: -1;
+  display: block;
+  visibility: visible;
 }
-
-.carousel__prev {
-  left: 10%;
-}
-
-.carousel__next {
-  right: 10%;
-}
-
-.carousel__pagination {
-  margin-top: 2rem;
-}
-
-/* #endregion :::: NAVIGATION :::: */

@@ -13,9 +13,9 @@ export default {
 <template>
 
   <section id="highlighted_projects">
-    <div class="container-fluid position-relative p-0 m-0">
+    <div class="container-fluid d-flex flex-column justify-content-center gap-5 position-relative p-0 m-0">
 
-      <h3 class="display-4 text-end me-5">highlithed<strong class="poppins-bold">projects</strong></h3>
+      <h3 class="display-4 text-end">Highlight</h3>
 
       <!-- Main projects slider-->
       <transition appear mode="out-in" name="fade">

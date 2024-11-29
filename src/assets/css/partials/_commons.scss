@@ -13,8 +13,7 @@ body {
   color: aliceblue;
   scroll-behavior: smooth;
   overflow-y: hidden;
-  background: linear-gradient(135deg, #0023b3 0%, #00d2ff 100%);
-  height: 100vh;
+  background: var(--background);
 }
 
 img {
@@ -23,6 +22,10 @@ img {
 
 .wrapper {
   height: calc(100vh - 190px);
+}
+
+.bg_grey {
+  background-color: var(--background);
 }
 
 /* #endregion :::: UTILITIES :::: */
